@@ -38,10 +38,12 @@ const editTask = (e) => {
 
   inputEdit.forEach(inputItem => {
     if (btn.textContent === 'Save' && inputItem.parentNode.className === 'active') {
-      inputItem.style.color = '#1809e6';
+      inputItem.style.color = '#5255e7';
+      inputItem.style.fontWeight = 'bold';
       inputItem.readOnly = '';
     } else if (btn.textContent === 'Edit' && inputItem.parentNode.className === '') {
       inputItem.style.color = '#eeeeeece';
+      inputItem.style.fontWeight = 'normal';
       inputItem.readOnly = "readonly";
     }
   })
