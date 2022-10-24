@@ -69,6 +69,13 @@ button {
   font-weight: 700;
 }
 
+button:hover {
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 section ul {
   list-style: none;
 }
@@ -80,9 +87,4 @@ section form input {
 
 section form button {
   font-size: 25px;
-  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgb(79, 78, 82));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
 }/*# sourceMappingURL=sass.css.map */
