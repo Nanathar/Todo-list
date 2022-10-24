@@ -70,7 +70,7 @@ button {
 }
 
 button:hover {
-  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941));
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), #1809e6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

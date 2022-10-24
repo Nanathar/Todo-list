@@ -16,22 +16,34 @@ const removeTask = (e) => {
 
 const editTask = (e) => {
   e.preventDefault();
-  const btn = e.target
-  const style = () => {
-    btn.style.backgroundClip = 'text';
-    btn.style.webkitBackgroundClip = 'text';
-    btn.style.webkitTextFillColor = 'transparent';
+  const btn = e.target;
+  const inputEdit = document.querySelectorAll('.input-task');
+
+  const style = (item) => {
+    item.style.backgroundClip = 'text';
+    item.style.webkitBackgroundClip = 'text';
+    item.style.webkitTextFillColor = 'transparent';
   }
 
   if (btn.textContent === 'Edit') {
     btn.textContent = 'Save';
     btn.style.background = '-webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941))';
-    style();
-  } else if(btn.textContent === 'Save') {
+    style(btn);
+  } else if (btn.textContent === 'Save') {
     btn.textContent = 'Edit';
     btn.style.background = '-webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgb(79, 78, 82))';
-    style();
+    style(btn);
   }
+
+  inputEdit.forEach(inputItem => {
+    if (btn.textContent === 'Save') {
+      inputItem.style.color = '#1809e6';
+      inputItem.readOnly = '';
+    } else if (btn.textContent === 'Edit') {
+      inputItem.style.color = '#eeeeeece';
+      inputItem.readOnly = "readonly";
+    }
+  })
 
 }
 
