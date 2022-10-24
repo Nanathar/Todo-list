@@ -5,11 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo-list</title>
+  <link rel="stylesheet" href="./css/sass.css">
+  <title>1 Projekt To-do-list</title>
 </head>
 
 <body>
+  <header>
+    <h1>Task List 2022</h1>
+    <form action="">
+      <input class="inputTask" type="text" placeholder="What do you have planned?">
+      <button class="add">Add task</button>
+    </form>
+    <h2>Search</h2>
+    <input class="inputSearch" type="text" placeholder="What are you looking for?">
+  </header>
 
+  <h3>Number of tasks :<span></span></h3>
+
+  <section class="tasks">
+    <h4>Tasks</h4>
+    <form action="">
+      <input class="inputTask" type="text" readonly="readonly"> <button>Edit</button> <button>Delete</button>
+      <input class="inputTask" type="text" readonly="readonly"> <button>Edit</button> <button>Delete</button>
+    </form>
+  </section>
+
+  <script src="main.js"></script>
 </body>
 
 </html>
