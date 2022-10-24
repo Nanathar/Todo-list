@@ -18,7 +18,6 @@ const editTask = (e) => {
   e.preventDefault();
   const btn = e.target;
   const inputEdit = document.querySelectorAll('.input-task');
-
   const style = (item) => {
     item.style.backgroundClip = 'text';
     item.style.webkitBackgroundClip = 'text';
@@ -27,19 +26,21 @@ const editTask = (e) => {
 
   if (btn.textContent === 'Edit') {
     btn.textContent = 'Save';
+    btn.parentNode.classList.add('active')
     btn.style.background = '-webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941))';
     style(btn);
   } else if (btn.textContent === 'Save') {
     btn.textContent = 'Edit';
+    btn.parentNode.classList.remove('active')
     btn.style.background = '-webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgb(79, 78, 82))';
     style(btn);
   }
 
   inputEdit.forEach(inputItem => {
-    if (btn.textContent === 'Save') {
+    if (btn.textContent === 'Save' && inputItem.parentNode.className === 'active') {
       inputItem.style.color = '#1809e6';
       inputItem.readOnly = '';
-    } else if (btn.textContent === 'Edit') {
+    } else if (btn.textContent === 'Edit' && inputItem.parentNode.className === '') {
       inputItem.style.color = '#eeeeeece';
       inputItem.readOnly = "readonly";
     }
