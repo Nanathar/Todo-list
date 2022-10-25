@@ -83,7 +83,8 @@ section form button {
   font-size: 25px;
 }
 
-div.active button.btn-edit {
+div.active button.btn-edit,
+button:hover {
   background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941));
   background-clip: text;
   -webkit-background-clip: text;

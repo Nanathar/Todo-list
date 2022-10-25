@@ -4,7 +4,6 @@ const formSection = document.querySelector('form.section-form');
 const inputTask = document.querySelector('input.input-new-task');
 const inputSearch = document.querySelector('input.input-search')
 const span = document.querySelector('h3 span');
-
 const taskList = [];
 
 const removeTask = (e) => {
@@ -35,16 +34,14 @@ const editTask = (e) => {
       inputItem.readOnly = "readonly";
     }
   })
-
 }
 
 const addTask = (e) => {
   e.preventDefault();
-  const task = inputTask.value;
-  if (task === '') return alert('Dear sir/madam add a task !!!');
+  if (inputTask.value === '') return alert('Dear sir/madam add a task !!!');
   const newTask = document.createElement('input');
   newTask.className = 'input-task';
-  newTask.value = task;
+  newTask.value = inputTask.value;
   newTask.readOnly = "readonly";
   const btnEdit = document.createElement('button');
   btnEdit.textContent = 'Edit';
@@ -60,6 +57,35 @@ const addTask = (e) => {
   div.querySelector('.btn-edit').addEventListener('click', editTask);
   span.textContent = taskList.length;
   inputTask.value = '';
+
+  const searchTask = (e) => {
+    const searchText = e.target.value.toLowerCase();
+
+    if (searchText === '') {
+      renderList();
+      return
+    } else {
+      // formSection.textContent = '';
+      const divs = [...document.querySelectorAll('div')];
+      divs.forEach((div, index) => {
+        console.log(div.firstChild.value.toLowerCase())
+
+      })
+
+
+
+
+      // let tasks = [...document.querySelectorAll('.input-task')];
+      // tasks.filter(task => task.value.toLowerCase().includes(searchText));
+      // tasks.forEach(task => {
+      //   formSection.appendChild(div)
+      //   div.append(task, btnEdit, btnDelete)
+      // })
+    }
+  }
+
+  inputSearch.addEventListener('input', searchTask)
+
 }
 
 const renderList = () => {
@@ -80,3 +106,34 @@ const deleteAllTask = (e) => {
 }
 
 formDelete.addEventListener('submit', deleteAllTask)
+
+// const searchTask = (e) => {
+//   const searchText = e.target.value.toLowerCase();
+//   let tasks = [...document.querySelectorAll('.input-task')];
+//   tasks.filter(task => task.value.toLowerCase().includes(searchText));
+//   formSection.textContent = '';
+//   tasks.forEach(task => {
+//     formSection.append(task, btnEdit, btnDelete)
+
+//   })
+// }
+
+// inputSearch.addEventListener('input', searchTask)
+
+// const searchTask = (e) => {
+//   const searchText = e.target.value.toLowerCase();
+
+//   if (searchText === '') {
+//     renderList();
+//     return
+//   } else if (true) {
+//     formSection.textContent = '';
+//     let tasks = [...document.querySelectorAll('.input-task')];
+//     tasks.filter(task => task.value.toLowerCase().includes(searchText));
+//     tasks.forEach(task => {
+//       formSection.append(task, btnEdit, btnDelete)
+//     })
+//   }
+// }
+
+// inputSearch.addEventListener('input', searchTask)
