@@ -1,4 +1,5 @@
-const formHeader = document.querySelector('form.header-form');
+const formAdd = document.querySelector('form.form-add');
+const formDelete = document.querySelector('form.form-delete');
 const formSection = document.querySelector('form.section-form');
 const inputTask = document.querySelector('input.input-new-task');
 const inputSearch = document.querySelector('input.input-search')
@@ -69,4 +70,13 @@ const renderList = () => {
   })
 }
 
-formHeader.addEventListener('submit', addTask)
+formAdd.addEventListener('submit', addTask)
+
+const deleteAllTask = (e) => {
+  e.preventDefault();
+  taskList.splice(0);
+  renderList();
+  span.textContent = taskList.length;
+}
+
+formDelete.addEventListener('submit', deleteAllTask)
