@@ -49,6 +49,14 @@ input
   background-color: $txtBcg
   color: $light
 
+section form input
+  border-radius: 10px
+  margin-bottom: 15px
+
+div.active input.input-task
+  color: #5255e7
+  font-weight: bold
+
 button
   margin-left: 15px
   border-style: none
@@ -61,12 +69,11 @@ button
   -webkit-text-fill-color: transparent
   font-weight: 700
 
-section ul
-  list-style: none
-
-section form input
-  border-radius: 10px
-  margin-bottom: 15px
-
 section form button
   font-size: 25px
+
+div.active button.btn-edit
+  background: -webkit-linear-gradient($light, $activeBtn)
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent

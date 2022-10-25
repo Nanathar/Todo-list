@@ -56,6 +56,16 @@ input {
   color: rgba(238, 238, 238, 0.8078431373);
 }
 
+section form input {
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+div.active input.input-task {
+  color: #5255e7;
+  font-weight: bold;
+}
+
 button {
   margin-left: 15px;
   border-style: none;
@@ -69,15 +79,13 @@ button {
   font-weight: 700;
 }
 
-section ul {
-  list-style: none;
-}
-
-section form input {
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
 section form button {
   font-size: 25px;
+}
+
+div.active button.btn-edit {
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }/*# sourceMappingURL=sass.css.map */
