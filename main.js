@@ -79,18 +79,16 @@ const deleteAllTask = (e) => {
 btnDelete.addEventListener('click', deleteAllTask)
 
 const searchTask = (e) => {
-  const searchText = e.target.value.toLowerCase();
 
-  if (searchText === '') {
+  if (e.target.value === '') {
     renderList();
     return
   } else {
+    const searchText = e.target.value.toLowerCase()
     let divs = [...document.querySelectorAll('div')];
-    divs = divs.filter(div => div.firstChild.value.toLowerCase().includes(e.target.value.toLowerCase()))
+    divs = divs.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
     formSection.textContent = '';
-    divs.forEach(div => {
-      formSection.append(div)
-    })
+    divs.forEach(div => formSection.appendChild(div))
   }
 }
 inputSearch.addEventListener('input', searchTask)
