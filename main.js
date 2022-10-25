@@ -36,6 +36,14 @@ const editTask = (e) => {
   })
 }
 
+const renderList = () => {
+  formSection.textContent = '';
+  taskList.forEach((task, i) => {
+    task.dataset.key = i;
+    formSection.appendChild(task);
+  })
+}
+
 const addTask = (e) => {
   e.preventDefault();
   if (inputTask.value === '') return alert('Dear sir/madam add a task !!!');
@@ -57,14 +65,6 @@ const addTask = (e) => {
   div.querySelector('.btn-edit').addEventListener('click', editTask);
   span.textContent = taskList.length;
   inputTask.value = '';
-}
-
-const renderList = () => {
-  formSection.textContent = '';
-  taskList.forEach((task, i) => {
-    task.dataset.key = i;
-    formSection.appendChild(task);
-  })
 }
 
 formAdd.addEventListener('submit', addTask)
