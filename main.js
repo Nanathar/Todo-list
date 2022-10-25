@@ -1,5 +1,5 @@
 const formAdd = document.querySelector('form.form-add');
-const formDelete = document.querySelector('form.form-delete');
+const btnDelete = document.querySelector('button.delete');
 const formSection = document.querySelector('form.section-form');
 const inputTask = document.querySelector('input.input-new-task');
 const inputSearch = document.querySelector('input.input-search')
@@ -57,45 +57,6 @@ const addTask = (e) => {
   div.querySelector('.btn-edit').addEventListener('click', editTask);
   span.textContent = taskList.length;
   inputTask.value = '';
-
-  const searchTask = (e) => {
-    const searchText = e.target.value.toLowerCase();
-
-
-    if (searchText === '') {
-      renderList();
-      return
-    } else {
-      let divs = [...document.querySelectorAll('div')];
-      divs.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
-      if (div.firstChild.value.toLowerCase().includes(searchText)) {
-        divs.forEach((div, index) => {
-          formSection.textContent = '';
-          console.log('true');
-          formSection.append(div[index])
-        })
-      } else {
-        console.log('false')
-        formSection.textContent = '';
-      }
-
-      // formSection.textContent = '';
-      // divs.forEach(div => {
-      //   formSection.appendChild(div)
-      // })
-
-
-      // let tasks = [...document.querySelectorAll('.input-task')];
-      // tasks.filter(task => task.value.toLowerCase().includes(searchText));
-      // tasks.forEach(task => {
-      //   formSection.appendChild(div)
-      //   div.append(task, btnEdit, btnDelete)
-      // })
-    }
-  }
-
-  inputSearch.addEventListener('input', searchTask)
-
 }
 
 const renderList = () => {
@@ -115,4 +76,21 @@ const deleteAllTask = (e) => {
   span.textContent = taskList.length;
 }
 
-formDelete.addEventListener('submit', deleteAllTask)
+btnDelete.addEventListener('click', deleteAllTask)
+
+const searchTask = (e) => {
+  const searchText = e.target.value.toLowerCase();
+
+  if (searchText === '') {
+    renderList();
+    return
+  } else {
+    let divs = [...document.querySelectorAll('div')];
+    divs = divs.filter(div => div.firstChild.value.toLowerCase().includes(e.target.value.toLowerCase()))
+    formSection.textContent = '';
+    divs.forEach(div => {
+      formSection.append(div)
+    })
+  }
+}
+inputSearch.addEventListener('input', searchTask)

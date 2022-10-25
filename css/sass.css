@@ -7,7 +7,7 @@
 body {
   min-height: 100vh;
   background-color: #222;
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(197, 167, 167, 0.158);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ button {
   cursor: pointer;
   background: transparent;
   font-size: 30px;
-  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgb(79, 78, 82));
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgb(92, 91, 97));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
