@@ -7,7 +7,7 @@
 body {
   min-height: 100vh;
   background-color: #222;
-  color: rgba(197, 167, 167, 0.158);
+  color: rgba(197, 167, 167, 0.1568627451);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ h3 {
 }
 
 h3 span {
-  color: rgb(141, 137, 137);
+  color: #8d8989;
   margin-left: 10px;
 }
 
@@ -52,7 +52,7 @@ input {
   padding: 10px;
   border-radius: 5px;
   border-style: none;
-  background-color: rgb(61, 61, 61);
+  background-color: #3d3d3d;
   color: rgba(238, 238, 238, 0.8078431373);
 }
 
@@ -72,7 +72,7 @@ button {
   cursor: pointer;
   background: transparent;
   font-size: 30px;
-  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgb(92, 91, 97));
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), #5c5b61);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,8 +84,23 @@ section form button {
 }
 
 div.active button.btn-edit,
-button:hover {
+button.btn-edit:hover {
   background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), rgba(26, 13, 218, 0.7882352941));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button.add:hover {
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+button.delete:hover,
+button.btn-delete:hover {
+  background: -webkit-linear-gradient(rgba(238, 238, 238, 0.8078431373), red);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

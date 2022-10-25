@@ -73,6 +73,7 @@ const deleteAllTask = (e) => {
   e.preventDefault();
   taskList.splice(0);
   renderList();
+  inputSearch.value = '';
   span.textContent = taskList.length;
 }
 
@@ -87,11 +88,7 @@ const searchTask = (e) => {
     let divs = [...document.querySelectorAll('div')];
     divs = divs.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
     formSection.textContent = '';
-    divs.forEach(div => {
-      formSection.appendChild(div)
-      console.log('true')
-      console.log(div)
-    })
+    divs.forEach(div => formSection.appendChild(div))
   }
 }
 inputSearch.addEventListener('input', searchTask)
