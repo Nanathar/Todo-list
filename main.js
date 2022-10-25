@@ -61,18 +61,28 @@ const addTask = (e) => {
   const searchTask = (e) => {
     const searchText = e.target.value.toLowerCase();
 
+
     if (searchText === '') {
       renderList();
       return
     } else {
+      let divs = [...document.querySelectorAll('div')];
+      divs.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
+      if (div.firstChild.value.toLowerCase().includes(searchText)) {
+        divs.forEach((div, index) => {
+          formSection.textContent = '';
+          console.log('true');
+          formSection.append(div[index])
+        })
+      } else {
+        console.log('false')
+        formSection.textContent = '';
+      }
+
       // formSection.textContent = '';
-      const divs = [...document.querySelectorAll('div')];
-      divs.forEach((div, index) => {
-        console.log(div.firstChild.value.toLowerCase())
-
-      })
-
-
+      // divs.forEach(div => {
+      //   formSection.appendChild(div)
+      // })
 
 
       // let tasks = [...document.querySelectorAll('.input-task')];
@@ -106,34 +116,3 @@ const deleteAllTask = (e) => {
 }
 
 formDelete.addEventListener('submit', deleteAllTask)
-
-// const searchTask = (e) => {
-//   const searchText = e.target.value.toLowerCase();
-//   let tasks = [...document.querySelectorAll('.input-task')];
-//   tasks.filter(task => task.value.toLowerCase().includes(searchText));
-//   formSection.textContent = '';
-//   tasks.forEach(task => {
-//     formSection.append(task, btnEdit, btnDelete)
-
-//   })
-// }
-
-// inputSearch.addEventListener('input', searchTask)
-
-// const searchTask = (e) => {
-//   const searchText = e.target.value.toLowerCase();
-
-//   if (searchText === '') {
-//     renderList();
-//     return
-//   } else if (true) {
-//     formSection.textContent = '';
-//     let tasks = [...document.querySelectorAll('.input-task')];
-//     tasks.filter(task => task.value.toLowerCase().includes(searchText));
-//     tasks.forEach(task => {
-//       formSection.append(task, btnEdit, btnDelete)
-//     })
-//   }
-// }
-
-// inputSearch.addEventListener('input', searchTask)
