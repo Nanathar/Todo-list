@@ -80,15 +80,11 @@ const deleteAllTask = (e) => {
 btnDelete.addEventListener('click', deleteAllTask)
 
 const searchTask = (e) => {
-  if (e.target.value === '') {
-    renderList();
-    return
-  } else {
-    const searchText = e.target.value.toLowerCase()
-    let divs = taskList;
-    divs = divs.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
-    formSection.textContent = '';
-    divs.forEach(div => formSection.appendChild(div))
-  }
+  const searchText = e.target.value.toLowerCase()
+  let tasks = taskList;
+  tasks = tasks.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
+  formSection.textContent = '';
+  tasks.forEach(div => formSection.appendChild(div))
+
 }
 inputSearch.addEventListener('input', searchTask)
