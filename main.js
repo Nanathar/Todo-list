@@ -85,7 +85,7 @@ const searchTask = (e) => {
     return
   } else {
     const searchText = e.target.value.toLowerCase()
-    let divs = [...document.querySelectorAll('div')];
+    let divs = taskList;
     divs = divs.filter(div => div.firstChild.value.toLowerCase().includes(searchText))
     formSection.textContent = '';
     divs.forEach(div => formSection.appendChild(div))
