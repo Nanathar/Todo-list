@@ -65,6 +65,7 @@ const addTask = (e) => {
   div.querySelector('.btn-edit').addEventListener('click', editTask);
   span.textContent = taskList.length;
   inputTask.value = '';
+  inputSearch.value = '';
 }
 
 formAdd.addEventListener('submit', addTask)
