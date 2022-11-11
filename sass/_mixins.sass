@@ -3,3 +3,17 @@
   background-clip: text
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
+
+=mq($breakpoint)
+  @if $breakpoint == phone
+    @media (max-width: 450px)
+      @content
+  @if $breakpoint == land-700
+    @media (max-width: 700px) and (orientation: landscape)
+      @content
+  @if $breakpoint == land-900
+    @media (max-width: 900px) and (max-height: 400px)
+      @content
+  @if $breakpoint == land-1024
+    @media (max-width: 1024px) and (orientation: landscape)
+      @content
