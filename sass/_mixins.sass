@@ -11,9 +11,14 @@
   @if $breakpoint == land-700
     @media (max-width: 700px) and (orientation: landscape)
       @content
-  @if $breakpoint == land-900
-    @media (max-width: 900px) and (max-height: 400px)
+  @if $breakpoint == phone-mid
+    @media (max-width: 650px)
       @content
   @if $breakpoint == land-1024
     @media (max-width: 1024px) and (orientation: landscape)
       @content
+  @if $breakpoint == phone-big
+    @media (max-width: 900px)
+      @content
+
+      
