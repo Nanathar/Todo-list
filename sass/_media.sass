@@ -1,19 +1,41 @@
-+mq(phone)
++mq(land-1024)
   :root
-    font-size: 5px
+    font-size: 8px
 
   header,
   section,
   h3
-    width: 320px
-    padding: 0 6px
+    width: 680px
+    padding: 6px
+
+  header
+    margin: 5px
+
+  header h1,
+  h2,
+  h3,
+  section h4
+    margin-bottom: 5px
+
+  h2
+    margin-top: 7px
+
+  h3
+    margin-bottom: 5px
+
+  h3 span
+    margin-left: 10px
 
   input
-    width: 200px
+    width: 420px
     padding: 10px
 
+  section form input
+    border-radius: 10px
+    margin-bottom: 15px
+
   button
-    margin-left: 5px
+    margin-left: 7px
 
 +mq(land-700)
   :root
@@ -54,57 +76,6 @@
   button
     margin-left: 7px
 
-+mq(phone-mid)
-  :root
-    font-size: 6.5px
-
-  header,
-  section,
-  h3
-    width: 450px
-
-  input
-    width: 250px
-
-+mq(land-1024)
-  :root
-    font-size: 8px
-
-  header,
-  section,
-  h3
-    width: 680px
-    padding: 6px
-
-  header
-    margin: 5px
-
-  header h1,
-  h2,
-  h3,
-  section h4
-    margin-bottom: 5px
-
-  h2
-    margin-top: 7px
-
-  h3
-    margin-bottom: 5px
-
-  h3 span
-    margin-left: 10px
-
-  input
-    width: 420px
-    padding: 10px
-
-  section form input
-    border-radius: 10px
-    margin-bottom: 15px
-
-  button
-    margin-left: 7px
-
 +mq(phone-big)
   :root
     font-size: 10px
@@ -117,3 +88,32 @@
 
   input
     width: 370px
+
++mq(phone-mid)
+  :root
+    font-size: 6.5px
+
+  header,
+  section,
+  h3
+    width: 450px
+
+  input
+    width: 250px
+
++mq(phone)
+  :root
+    font-size: 5px
+
+  header,
+  section,
+  h3
+    width: 320px
+    padding: 0 6px
+
+  input
+    width: 200px
+    padding: 10px
+
+  button
+    margin-left: 5px

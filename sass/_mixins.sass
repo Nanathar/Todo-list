@@ -6,19 +6,17 @@
 
 =mq($breakpoint)
   @if $breakpoint == phone
-    @media (max-width: 450px)
+    @media (max-width: 450px) and (orientation: portrait)
       @content
   @if $breakpoint == land-700
     @media (max-width: 700px) and (orientation: landscape)
       @content
   @if $breakpoint == phone-mid
-    @media (max-width: 650px)
+    @media (max-width: 650px)and (orientation: portrait)
       @content
   @if $breakpoint == land-1024
     @media (max-width: 1024px) and (orientation: landscape)
       @content
   @if $breakpoint == phone-big
-    @media (max-width: 900px)
+    @media (max-width: 900px) and (orientation: portrait)
       @content
-
-      
